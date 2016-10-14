@@ -4,7 +4,6 @@
 #include <util/delay.h>
 
 #define stepper_dir DDRD
-#define F_CPU 8000000UL
 #define stepper_port PORTD
 #define dir_pin PIND0
 #define step_pin PIND1
@@ -18,6 +17,10 @@
 #define SIXTEENTHSTEP 5
 
 void stepper_setup(int mode);
-void stepper_set_angle(int data);
+void stepper_set_rel_angle(int data);
+void stepper_set_abs_angle(int data);
+void delay_micro(int x);
+void stepper_check();
+void stepper_reset();
 
 #endif
